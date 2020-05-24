@@ -5,9 +5,10 @@ import { ProjectsDashboardRoutingModule } from './projectsDashboard-routing.modu
 
 import { ProjectsDashboardComponent } from './projectsDashboard.component';
 import { SharedModule } from '../shared/shared.module';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [ProjectsDashboardComponent],
-  imports: [CommonModule, SharedModule, ProjectsDashboardRoutingModule]
+  imports: [CommonModule, SharedModule, ProjectsDashboardRoutingModule, TooltipModule.forRoot()]
 })
 export class ProjectsDashboardModule {}

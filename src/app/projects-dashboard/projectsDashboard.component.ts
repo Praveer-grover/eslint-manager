@@ -10,6 +10,11 @@ export class ProjectsDashboardComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    // create an observer for list of projects and bind it to 
+    // UI
+    // give an option of add project
+    console.log("Working");
+  }
 
 }
