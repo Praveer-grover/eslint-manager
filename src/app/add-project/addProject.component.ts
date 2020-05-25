@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { projectService } from '../../../core/services/projectService';
 
 @Component({
   selector: 'add-project',
@@ -7,8 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProjectComponent implements OnInit {
 
-  constructor() { }
+  projectName: string;
+  projectPath: string;
+  eslintCommand: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void { }
+
+  addProject() {
+    projectService.addProject(this.projectName, this.projectPath, this.eslintCommand);
+
+    setTimeout(() => { 
+      this.router.navigateByUrl('/home');
+    }, 500);
+  }
 
 }

@@ -1,3 +1,13 @@
-:host {
-  
+@import "../../variables.scss";
+
+button.add-project-btn {
+  margin-top: $linked-content-space;
+}
+
+.add-project-container input {
+  margin-top: $linked-content-space;
+}
+
+.add-project-container  input:last-child {
+  margin-bottom: $linked-content-space;
 }

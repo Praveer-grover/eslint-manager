@@ -1,13 +1,16 @@
 import { Project } from '../model/project';
 
-export class ProjectDao {
+class ProjectDao {
+
+    projects: { [id: string]: Project } = {};
 
     public getAllSavedProjects(): Project[] {
-        throw "Not implemented yet";
+        return [
+        ];
     }
 
     public saveProject(project: Project): void {
-        throw "Not implemented yet";
+        this.projects[project.id] = project;
     }
 
     public getProject(id: string): Project {
@@ -19,3 +22,5 @@ export class ProjectDao {
     }
 
 }
+
+export const projectDao = new ProjectDao();

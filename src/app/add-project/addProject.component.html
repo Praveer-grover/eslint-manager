@@ -1,7 +1,16 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.DETAIL.TITLE' | translate }}
-  </h1>
+<div class="add-project-container flex-container flex-child flex-vertical-direction">
+  <!-- Add project area -->
+  <div class="flex-child content-padding">
 
-  <a routerLink="/">{{ 'PAGES.DETAIL.BACK_TO_HOME' | translate }}</a>
+    <input type="text" class="form-control" [(ngModel)]="projectName" placeholder="Project name">
+    <input type="text" class="form-control" [(ngModel)]="projectPath" placeholder="Paste path of the project">
+    <input type="text" class="form-control" [(ngModel)]="eslintCommand" placeholder="Command to execute es lint">
+    <button
+      type="button"
+      class="add-project-btn btn btn-primary"
+      (click)="addProject()"
+    >
+      Add project
+    </button>
+  </div>
 </div>

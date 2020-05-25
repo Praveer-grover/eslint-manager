@@ -7,11 +7,6 @@ import { AddProjectRoutingModule } from './add-project/addProject-routing.module
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: '**',
     component: PageNotFoundComponent
   }

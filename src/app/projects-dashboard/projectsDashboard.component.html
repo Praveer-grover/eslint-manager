@@ -1,13 +1,10 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
-
-  <a routerLink="/add-project">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a>
-
-  <button type="button" class="btn btn-primary"
-        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-  Simple demo
-</button>
+<div class="flex-container flex-child flex-vertical-direction">
+  <!-- Add project area -->
+  <div class="flex-child content-padding">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let p of projects$ | async">
+        {{ p.name }}
+      </li>
+    </ul>
+  </div>
 </div>
-
