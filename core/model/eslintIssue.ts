@@ -5,4 +5,5 @@ export interface EslintIssue {
     link: string;
     line: number;
     column: number;
+    severity: number;
 }

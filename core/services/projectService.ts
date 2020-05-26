@@ -14,7 +14,7 @@ class ProjectService {
         this.projectSubj = new ReplaySubject();
     }
 
-    public addProject(name: string, path: string, eslintCommand: string): void {
+    public addProject(name: string, path: string, executeCommand: string, jsonReportPath: string): void {
 
         const project: Project = {
             id: this.createIdFromName(name),
@@ -25,7 +25,8 @@ class ProjectService {
 
         const eslintConfig: EslintConfig = {
             configurationFilePath: "./.eslintrc.json",
-            executeCommand: eslintCommand
+            executeCommand,
+            jsonReportPath
         }
 
         project.eslintConfig = eslintConfig;

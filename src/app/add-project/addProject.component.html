@@ -5,11 +5,9 @@
     <input type="text" class="form-control" [(ngModel)]="projectName" placeholder="Project name">
     <input type="text" class="form-control" [(ngModel)]="projectPath" placeholder="Paste path of the project">
     <input type="text" class="form-control" [(ngModel)]="eslintCommand" placeholder="Command to execute es lint">
-    <button
-      type="button"
-      class="add-project-btn btn btn-primary"
-      (click)="addProject()"
-    >
+    <input type="text" class="form-control" [(ngModel)]="jsonOutputPath" placeholder="JSON report path">
+
+    <button type="button" class="add-project-btn btn btn-primary" (click)="addProject()">
       Add project
     </button>
   </div>

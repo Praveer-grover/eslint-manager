@@ -12,13 +12,14 @@ export class AddProjectComponent implements OnInit {
   projectName: string;
   projectPath: string;
   eslintCommand: string;
+  jsonOutputPath: string;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void { }
 
   addProject() {
-    projectService.addProject(this.projectName, this.projectPath, this.eslintCommand);
+    projectService.addProject(this.projectName, this.projectPath, this.eslintCommand, this.jsonOutputPath);
 
     setTimeout(() => { 
       this.router.navigateByUrl('/home');

@@ -2,6 +2,6 @@ import { EslintIssue } from './eslintIssue';
 
 export interface ProjectReport {
     projectId: string;
-    issues: EslintIssue[];
+    issues: { filePath: string, issues: EslintIssue[] }[];
     generatedAt: Date;
 }
