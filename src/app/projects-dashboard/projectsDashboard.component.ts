@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { Project } from '../../../core/model/project';
+import { projectService } from '../../../core/services/projectService';
+import { eslintHandler } from '../../../core/services/eslintHandler';
 
 @Component({
   selector: 'app-projects-dashboard',
@@ -20,7 +22,13 @@ export class ProjectsDashboardComponent implements OnInit {
     // create an observer for list of projects and bind it to 
     // UI
     // give an option of add project
+    this.projects$ = projectService.getProjects();
 
   }
+
+  runEslint(project: Project): void {
+    eslintHandler.runEslint(project);
+  }
+
 
 }
