@@ -54,15 +54,23 @@ class EslintService {
     }
 
     private executeEslint(project: Project): boolean {
-        const oldTimestamp = this.getLastModifiedTime(project.eslintConfig.jsonReportPath);
+        // check if file exists
+        const exists = fs.existsSync(project.eslintConfig.jsonReportPath);
+        if (exists) {
+            const oldTimestamp = this.getLastModifiedTime(project.eslintConfig.jsonReportPath);
 
-        eslintHandler.runEslint(project.path, project.eslintConfig.executeCommand);
+            eslintHandler.runEslint(project.path, project.eslintConfig.executeCommand);
 
-        const newTimestamp = this.getLastModifiedTime(project.eslintConfig.jsonReportPath);
+            const newTimestamp = this.getLastModifiedTime(project.eslintConfig.jsonReportPath);
 
-        if (!(newTimestamp > oldTimestamp)) {
-            // Log the error
-            return false;
+            if (!(newTimestamp > oldTimestamp)) {
+                // Log the error
+                return false;
+            }
+        } else {
+            eslintHandler.runEslint(project.path, project.eslintConfig.executeCommand);
+            // if file was written then eslint was executed
+            return fs.existsSync(project.eslintConfig.jsonReportPath);
         }
 
         return true;
