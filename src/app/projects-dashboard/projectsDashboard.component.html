@@ -1,11 +1,20 @@
 <div class="flex-container flex-child flex-vertical-direction">
-  <!-- Add project area -->
+  <!-- projects area -->
   <div class="flex-child content-padding">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let p of projects$ | async">
         {{ p.name }}
         <button class="btn btn-secondary" (click)="runEslint(p)">Eslint</button>
+        <div *ngIf="latestReports$[p.id] | async as report">
+          <button class="btn btn-secondary" (click)="showReport(report)">Show report</button>
+        </div>
+      </li>
+      <!-- Option to add a project -->
+      <li>
+
       </li>
     </ul>
   </div>
+
+  <!-- Area to view a project's report -->
 </div>

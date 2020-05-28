@@ -1,7 +1,8 @@
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { projectDao } from '../dao/projectDao';
 import { EslintConfig } from '../model/eslintConfig';
 import { Project } from '../model/project';
+import { ProjectReport } from '../model/projectReport';
 
 
 class ProjectService {
@@ -10,8 +11,11 @@ class ProjectService {
 
     private projectsStore: Project[] = [];
 
+    private latestReportSubject: { [projectId: string]: Subject<ProjectReport> } = {}
+
     constructor() {
         this.projectSubj = new ReplaySubject();
+        // Initialize all the projects into store and send it onto the subject once
     }
 
     public addProject(name: string, path: string, executeCommand: string, jsonReportPath: string): void {
@@ -40,6 +44,24 @@ class ProjectService {
 
     public getProjects(): Observable<Project[]> {
         return this.projectSubj.asObservable();
+    }
+
+    public saveProjectReport(report: ProjectReport): void {
+        projectDao.saveReport(report);
+
+        if (!this.latestReportSubject[report.projectId]) {
+            this.latestReportSubject[report.projectId] = new Subject();
+        }
+
+
+        this.latestReportSubject[report.projectId].next(report);
+    }
+
+    public getLatestReport(projectId: string): Observable<ProjectReport> {
+        if (!this.latestReportSubject[projectId]) {
+            this.latestReportSubject[projectId] = new Subject();
+        }
+        return this.latestReportSubject[projectId].asObservable();
     }
 
     private createIdFromName(name: string): string {

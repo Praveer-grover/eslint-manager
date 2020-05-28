@@ -1,9 +1,9 @@
 import * as fs from 'fs';
-import { projectDao } from '../dao/projectDao';
 import { EslintIssueType } from '../eslintIssueType';
 import { Project } from '../model/project';
 import { ProjectReport } from '../model/projectReport';
 import { eslintHandler } from './eslintHandler';
+import { projectService } from './projectService';
 
 
 class EslintService {
@@ -15,7 +15,7 @@ class EslintService {
 
         const projectReport: ProjectReport = this.prepareReport(project);
 
-        projectDao.saveReport(projectReport);
+        projectService.saveProjectReport(projectReport);
 
         console.log(projectReport);
 
