@@ -64,6 +64,10 @@ class ProjectService {
         return this.latestReportSubject[projectId].asObservable();
     }
 
+    public getReportsForProject(projectId: string): ProjectReport[] {
+        return projectDao.getReports(projectId);
+    }
+
     private createIdFromName(name: string): string {
         return name.trim().replace(" ", "");
     }

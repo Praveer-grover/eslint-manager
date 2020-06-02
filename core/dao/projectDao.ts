@@ -3,9 +3,9 @@ import { ProjectReport } from '../model/projectReport';
 
 class ProjectDao {
 
-    projects: { [id: string]: Project } = {};
+    private projects: { [id: string]: Project } = {};
 
-    projectReports: { [id: string]: ProjectReport[] } = {};
+    private projectReports: { [id: string]: ProjectReport[] } = {};
 
     public getAllSavedProjects(): Project[] {
         return [
@@ -29,6 +29,10 @@ class ProjectDao {
             this.projectReports[projectReport.projectId] = [];
         }
         this.projectReports[projectReport.projectId].push(projectReport);
+    }
+
+    public getReports(projectId: string): ProjectReport[] {
+        return this.projectReports[projectId];
     }
 
 }
