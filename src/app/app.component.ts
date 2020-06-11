@@ -28,7 +28,7 @@ export class AppComponent {
 
   public loadProjectPage(p: Project, index: number): void {
     this.currentSelection = index;
-    console.log(p);
+    this.router.navigateByUrl("/project-detail/" + p.id);
   }
 
   private pushMockData(): void {

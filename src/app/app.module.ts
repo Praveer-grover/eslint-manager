@@ -18,6 +18,7 @@ import { ProjectsDashboardModule } from './projects-dashboard/proejctsDashboard.
 import { DetailModule } from './add-project/addProject.module';
 
 import { AppComponent } from './app.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ProjectDetailComponent],
   imports: [
     BrowserModule,
     FormsModule,
