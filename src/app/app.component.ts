@@ -15,6 +15,7 @@ import { Project } from '../../core/model/project';
 export class AppComponent {
 
   projects: Project[];
+  currentSelection: number;
   constructor(
     public electronService: ElectronService,
     private translate: TranslateService,
@@ -25,7 +26,8 @@ export class AppComponent {
     this.determineHomePage();
   }
 
-  public loadProjectPage(p: Project): void {
+  public loadProjectPage(p: Project, index: number): void {
+    this.currentSelection = index;
     console.log(p);
   }
 

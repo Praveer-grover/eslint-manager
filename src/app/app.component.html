@@ -6,7 +6,8 @@
             <!-- Projects overview -->
             <div class=" flex-child">
                 <ul class="projects-list list-group">
-                    <li class="item list-group-item" *ngFor="let p of projects" (click)="loadProjectPage(p)">
+                    <li [ngClass]="{'item': true, 'list-group-item': true, 'selected': i==currentSelection }"
+                        *ngFor="let p of projects ; let i = index" (click)="loadProjectPage(p, i)">
                         {{ p.name }}
                     </li>
                     <!-- Option to add a project -->

@@ -20,6 +20,12 @@ $highlight-color: darken($color: $sidebar-color, $amount: 5);
     box-sizing: border-box;
 }
 
+.sidebar .list-group-item.selected {
+    background-color: darken($color: $sidebar-color, $amount: 5);
+    border-left: 0.2rem solid $accent-color;
+    box-sizing: border-box;
+}
+
 .sidebar .last-status {
     margin: 0.8rem;
     padding: 1rem;
