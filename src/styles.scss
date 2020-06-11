@@ -9,6 +9,11 @@ app-root {
 
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: $primary-background;
+  color: invert($primary-background)
+}
+* {
+  user-select: none;
 }
 
 

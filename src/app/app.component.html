@@ -1,10 +1,26 @@
 <div class="flex-container flex-child">
     <div class="flex-container flex-child">
         <!-- Sidebar -->
-        <div class="sidebar">
-            Sidebar goes here
+        <div class="flex-container flex-child flex-vertical-direction sidebar">
+
+            <!-- Projects overview -->
+            <div class=" flex-child">
+                <ul class="projects-list list-group">
+                    <li class="item list-group-item" *ngFor="let p of projects" (click)="loadProjectPage(p)">
+                        {{ p.name }}
+                    </li>
+                    <!-- Option to add a project -->
+                </ul>
+            </div>
+
+            <!-- Bottom section showing last ran project -->
+            <div class="last-status flex-fixed-child">
+                {{projects[0].name}}
+            </div>
         </div>
-        <div class="flex-container flex-child">
+
+        <!-- The main content area -->
+        <div class="flex-container flex-child" style="flex-basis: 60%;">
             <router-outlet></router-outlet>
         </div>
     </div>

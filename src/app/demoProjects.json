@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Movies management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "Core applications"
+    },
+    {
+        "name": "Stalls management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "Core applications"
+    },
+    {
+        "name": "Truck management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "Core applications"
+    },
+    {
+        "name": "Confetti business management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "Core applications"
+    },
+    {
+        "name": "Toolkit extensions",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "Infrastructure"
+    },
+    {
+        "name": "Common",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "Infrastructure"
+    },
+    {
+        "name": "Notifications management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "System applications"
+    },
+    {
+        "name": "Timelines management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "System applications"
+    },
+    {
+        "name": "Workflow managment",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "System applications"
+    },
+    {
+        "name": "Process time management",
+        "path": "/Users/praveer/Documents/projects/eslintManager/eslint-manager",
+        "executeCommand": "npx eslint core/**/*.ts src/**/*.ts -o eslintReport.json -f json",
+        "jsonReportPath": "/Users/praveer/Documents/projects/eslintManager/eslint-manager/eslintReport.json",
+        "groupingTag": "System applications"
+    }
+]

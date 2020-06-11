@@ -24,7 +24,8 @@ class ProjectService {
             id: this.createIdFromName(name),
             name,
             path,
-            eslintConfig: null
+            eslintConfig: null,
+            groupingTag: ""
         };
 
         const eslintConfig: EslintConfig = {

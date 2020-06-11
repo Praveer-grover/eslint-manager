@@ -5,4 +5,5 @@ export interface Project {
     name: string;
     path: string;
     eslintConfig: EslintConfig;
+    groupingTag: string;
 }

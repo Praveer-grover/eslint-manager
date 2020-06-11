@@ -8,8 +8,13 @@ class ProjectDao {
     private projectReports: { [id: string]: ProjectReport[] } = {};
 
     public getAllSavedProjects(): Project[] {
-        return [
-        ];
+        const projects = [];
+        for (const prop in this.projects) {
+            if (Object.prototype.hasOwnProperty.call(this.projects, prop)) {
+                projects.push(this.projects[prop]);
+            }
+        }
+        return projects;
     }
 
     public saveProject(project: Project): void {
