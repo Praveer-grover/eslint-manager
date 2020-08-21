@@ -22,7 +22,7 @@ class ProjectDao {
     }
 
     public getProject(id: string): Project {
-        throw "Not implemented yet";
+        return this.projects[id];
     }
 
     public removeProject(id: string): void {

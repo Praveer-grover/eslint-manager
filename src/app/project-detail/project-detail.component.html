@@ -1,1 +1,11 @@
-<p>project-detail works!</p>
+<div class="flex-container flex-child content-padding flex-vertical-direction">
+    <h3>{{project.name}}</h3>
+
+    <div class="flex-fixed-child">
+
+        <div class="run-report-btn" (click)="runEsLint()">
+            <fa-icon [icon]="faCog"></fa-icon> Run analysis
+        </div>
+    </div>
+    <app-issues-list *ngIf="report" [issues]="report.issues"></app-issues-list>
+</div>

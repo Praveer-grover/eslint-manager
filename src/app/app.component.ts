@@ -31,6 +31,10 @@ export class AppComponent {
     this.router.navigateByUrl("/project-detail/" + p.id);
   }
 
+  public navigateToHome(): void {
+    this.router.navigateByUrl("/home");
+  }
+
   private pushMockData(): void {
 
     const projectsData: any[] = demoProjects;
